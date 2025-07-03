@@ -146,6 +146,10 @@ class PuzzleService
     private function generateRandomString($length = 14): string
     {
         $letters = 'abcdefghijklmnopqrstuvwxyz';
-        return substr(str_shuffle(str_repeat($letters, ceil($length / strlen($letters)))), 0, $length);
+        do {
+            $string = substr(str_shuffle(str_repeat($letters, ceil($length / strlen($letters)))), 0, $length);
+        } while (!$this->validator->findValidWords($string, [], true));
+
+        return $string;
     }
 }

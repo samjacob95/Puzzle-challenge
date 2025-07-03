@@ -72,9 +72,10 @@ class WordValidatorService
      *
      * @param string $available
      * @param array $exclude
-     * @return array
+     * @param boolean $exclude
+     * @return array|boolean
      */
-    public function findValidWords(string $available, array $exclude = []): array
+    public function findValidWords(string $available, array $exclude = [], bool $validWordPossibleCheck = false): array|bool
     {
         $validWords = [];
 
@@ -85,6 +86,10 @@ class WordValidatorService
 
             if ($this->canConstructFromAvailable($word, $available)) {
                 $validWords[] = $word;
+            }
+
+            if ($validWordPossibleCheck && !empty($validWords)) {
+                return true;
             }
         }
 
