@@ -75,6 +75,10 @@ class PuzzleService
         $updated = $this->consumeLetters($word, $puzzle->remaining_string);
         $puzzle->update(['remaining_string' => $updated]);
 
+        if ($updated === '') {
+            $puzzle->update(['status' => PuzzleStatus::COMPLETED]);
+        }
+
         return [
             'valid' => true,
             'score' => $score,
