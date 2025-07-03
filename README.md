@@ -29,7 +29,7 @@ This Laravel backend handles student submissions for word puzzles, grades them, 
 
 ## 🛠️ Setup Instructions
 
-# English wordlist Reference
+### English wordlist Reference
 https://raw.githubusercontent.com/jeremy-rifkin/Wordlist/refs/heads/master/res/e.txt
 
 ```bash
