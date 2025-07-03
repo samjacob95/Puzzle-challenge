@@ -29,9 +29,12 @@ This Laravel backend handles student submissions for word puzzles, grades them, 
 
 ## 🛠️ Setup Instructions
 
+# English wordlist Reference
+https://raw.githubusercontent.com/jeremy-rifkin/Wordlist/refs/heads/master/res/e.txt
+
 ```bash
-git clone https://github.com/yourusername/async-puzzle.git
-cd async-puzzle
+git clone https://github.com/samjacob95/Puzzle-challenge
+cd Puzzle-challenge
 
 composer install
 cp .env.example .env
@@ -39,9 +42,6 @@ php artisan key:generate
 
 # Create DB and update .env with DB credentials
 php artisan migrate
-
-# English wordlist Reference
-https://raw.githubusercontent.com/jeremy-rifkin/Wordlist/refs/heads/master/res/e.txt
 
 php artisan serve
 
